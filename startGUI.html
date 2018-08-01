@@ -6,15 +6,16 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SMG2S - Libraries</title>
+        <title>SMG2S - Start with the GUI</title>
 
         <!-- CSS -->        
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Roboto:300,400,500">
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style_perso.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -76,18 +77,27 @@
 	        <div class="container">
 	        	
 	            <div class="row">
-	                <div class="col-sm-12 features section-description wow fadeIn">
+	                <div class="col-sm-12 features section-description">
 	                    <h2>How to start with the GUI ?</h2>
-	                    <div class="divider-1"><div class="line"></div></div>
+	                    <div class="divider-1"></div>
 	                </div>
 	            </div>
 
 
                 <div class="row">
-                    <div class="col-sm-12 section-description wow fadeIn">
-                        <p> To develop a dynamic and intuitive graphical user interface, we used libraries. Normally, some of them are include in Python distribution. You can find below the list of libraries which are used to create the UI.
+                    <div class="col-sm-12 features section-description ">
+                        <div class="divider-1"><div class="line"></div></div>
+                        <h3>Installation</h3>
+                        <div class="divider-1"><div class="line"></div></div>
                     </div>
-                    <div class="col-sm-12 features-box wow fadeInLeft">
+                    
+                    <div class="col-sm-12 section-description">
+                        <p>You need to have Python2.X or Python3.X to run it. Moreover, the UI use some library to work, you can see the list of libraries by clicking on this button.</p>
+                    </div>   
+                    <div class="col-sm-12 section-description">
+                        <p> To develop a dynamic and intuitive graphical user interface, we used libraries. Normally, some of them are include in Python distribution. You can find below the list of libraries which are used to create the UI.</p>
+                    </div>
+                    <div class="col-sm-12 features-box">
                         <div class="row">
                             <div class="col-sm-3 features-box-icon">
                                 <i class="fas fa-list-ul"></i>
@@ -97,7 +107,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 features-box wow fadeInLeft">
+                    <div class="col-sm-6 features-box">
                         <div class="row">
                             
                             <div class="col-sm-9">
@@ -112,7 +122,7 @@
                         </div>
                     </div>
             
-                    <div class="col-sm-6 features-box wow fadeInLeft">
+                    <div class="col-sm-6 features-box ">
                         <div class="row">
                             <p> Modules which need to be installed in addition to Python :</p>
                             <div class="list-group">
@@ -122,21 +132,21 @@
                             </div> 
                         </div>
                     </div>
-                    <div class="col-sm-12 features-box wow fadeInLeft">
+                    <div class="col-sm-12 features-box">
                         <div class="row">
-                            <div align="left" class="col-sm-6 features wow fadeIn">
+                            <div align="left" class="col-sm-6 features">
                                 <p align = "left">Install modules to Python 2.X</p>
                                 <pre>
-<code>sudo apt-get install python-tk</code>
+<code>sudo apt-get install python-tk python-imaging-tk</code>
 <code>pip -m install Pillow</code>
 <code>python -mpip install -U pip</code>
 <code>python -mpip install -U matplotlib</code>
 <code>pip install -U numpy scipy</code></pre>
                             </div>
-                            <div align="left" class="col-sm-6 features wow fadeIn">
+                            <div align="left" class="col-sm-6 features">
                                 <p align="left">Install modules to Python 3.X</p>
                                 <pre>
-<code>sudo apt-get install python3-tk</code>
+<code>sudo apt-get install python3-tk python-imaging-tk</code>
 <code>pip -m install Pillow</code>
 <code>python -mpip install -U pip</code>
 <code>python -mpip install -U matplotlib</code>
@@ -144,42 +154,37 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 features-box wow fadeInLeft">
+                    <div class="col-sm-12 features section-description">
+                        <div class="divider-1"><div class="line"></div></div>
+                        <h3>Execution</h3>
+                        <div class="divider-1"><div class="line"></div></div>
+                    </div>
+                    <div class="col-sm-12 section-description">
+                        <p> The graphic user interface is a Python program which can be start on a Terminal</p>
+                    </div>
+                    <div class="col-sm-12 features-box">
                         <div class="row">
-                            <div class="col-sm-3 features-box-icon">
-                                <i class="fa fa-circle"></i>
+                            <div align="left" class="col-sm-6 features">
+                                <p align = "left">Python 2.X : In the main directory</p>
+                                <pre>
+<code>python main.py</code></pre>
                             </div>
-                            <div class="col-sm-9">
-                                <h3>Re</h3>
-                                <p>
-                                    Standard re module is bundled in the Python installation.
-                                </p>
-                                <p>
-                                    <a href="https://docs.python.org/3.6/library/re.html" class="btn btn-warning btn-lg" target="_blank">
-                                        <span class="fa fa-external-link"></span> Re documentation
-                                    </a> 
-                                </p>
+                            <div align="left" class="col-sm-6 features">
+                                <p align="left">Python 3.X : In the main directory:</p>
+                                <pre>
+<code>python3 main.py</code></pre>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-sm-6 features-box wow fadeInLeft">
-                        <div class="row">
-                            <div class="col-sm-3 features-box-icon">
-                                <i class="fa fa-mouse-pointer"></i>
-                            </div>
-                            <div class="col-sm-9">
-                                <h3>For use GUI</h3>
-                                <p>
-                                    You need to have Python2.X or Python3.X to run it. Moreover, the UI use some library to work, you can see the list of libraries by clicking on this button.
-                                </p>
-                                <p>
-                                    <a href="listlibraries.html" class="btn btn-warning btn-lg" target="_blank">
-                                        <span class="fa fa-external-link"></span> List of UI libraries
-                                    </a> 
-                                </p>
-                            </div>
-                        </div>
+                    <div class="col-sm-12 features section-description">
+                        <div class="divider-1"><div class="line"></div></div>
+                        <h3>How to use GUI ?</h3>
+                        <div class="divider-1"><div class="line"></div></div>
+                        <p>
+                            <a href="howtouse.html" class="btn btn-warning btn-lg">
+                                <span class="fa fa-external-link"></span> How to use GUI
+                            </a> 
+                        </p>
                     </div>
                 </div>
 	        </div>

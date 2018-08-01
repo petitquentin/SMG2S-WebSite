@@ -1,4 +1,6 @@
 
+
+
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -7,6 +9,8 @@ body {
     line-height: 30px;
     text-align: center;
 }
+
+
 
 strong { font-weight: 500; }
 
@@ -61,8 +65,8 @@ ul.navbar-nav {
 }
 
 .navbar-inverse ul.navbar-nav li a { color: #fff; border: 0; }
-.navbar-inverse ul.navbar-nav li a:hover { color: #ddd; border: 0; }
-.navbar-inverse ul.navbar-nav li a:focus { color: #ddd; outline: 0; border: 0; }
+.navbar-inverse ul.navbar-nav li a:hover { color: #ccc; border: 0; }
+.navbar-inverse ul.navbar-nav li a:focus { color: #ccc; outline: 0; border: 0; }
 
 .navbar-inverse ul.navbar-nav li a.btn-link-3 {
 	display: inline-block;

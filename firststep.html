@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style_perso.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,9 +53,14 @@
 					<div class="collapse navbar-collapse" id="top-navbar-1">
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="index.html">Home</a></li>
-							<li><a href="firststep.html">First Step</a></li>
-							<li><a href="example.html">Example</a></li>
-							<li><a href="about.html">About us</a></li>
+							<li><a href="firststep.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Installation<span class="caret"></span></a>
+                                <ul class="dropdown-menu" color="Black">
+                                    <li><a href="startSMG2S.html">Start with SMG2S</a></li>
+                                    <li><a href="startGUI.html">Start with the GUI</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="howtouse.html">How to use ?</a></li>
+                            <li><a href="example.html">Example</a></li>
 							<li><a href="project.html">Our project</a></li>
 							<li><a href="faq.html">FAQ</a></li>
 							<li><a class="btn btn-link-3" href="download.html">Download</a></li>
@@ -69,7 +75,7 @@
 	        <div class="container">
 	        	
 	            <div class="row">
-	                <div class="col-sm-12 features section-description wow fadeIn">
+	                <div class="col-sm-12 features section-description ">
 	                    <h2>First step with SMG2S</h2>
 	                    <div class="divider-1"><div class="line"></div></div>
 	                </div>
@@ -77,41 +83,43 @@
 
 
                 <div class="row">
-                    <div class="col-sm-12 section-description wow fadeIn">
+                    <div class="col-sm-12 section-description ">
                         <h3>What is needed for launch SMG2S ?</h3>
                     </div>
-                    <div class="col-sm-6 features-box wow fadeInLeft">
+                    <div class="col-sm-6 features-box">
                         <div class="row">
                             <div class="col-sm-3 features-box-icon">
                                 <i class="fa fa-code"></i>
                             </div>
                             <div class="col-sm-9">
-                                <h3>For generate matrices</h3>
+                                <h3>To generate matrices</h3>
                                 <p>
-                                    You need to have MPI, PETSc and SLEPc on your machine. Please refer to README.md file on Github.
+                                    You need to have <strong>MPI</strong>, <strong>PETSc</strong> and <strong>SLEPc</strong> on your machine. Please refer to README.md file on Github.
                                 </p>
                                 <p>
-                                    <a href="https://github.com/brunowu/SMG2S" class="btn btn-warning btn-lg" target="_blank">
-                                        <span class="fa fa-external-link"></span> Visit the Github Project
+                                    <a href="startGUI.html" class="btn btn-warning btn-lg">
+                                        <span class="fa fa-external-link"></span> Install SMG2S</title>
+
                                     </a> 
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-6 features-box wow fadeInLeft">
+                    <div class="col-sm-6 features-box">
                         <div class="row">
                             <div class="col-sm-3 features-box-icon">
                                 <i class="fa fa-mouse-pointer"></i>
                             </div>
                             <div class="col-sm-9">
-                                <h3>For use GUI</h3>
+                                <h3>To use GUI</h3>
                                 <p>
-                                    You need to have Python2.X or Python3.X to run it. Moreover, the UI use some library to work, you can see the list of libraries by clicking on this button.
+                                    You need to have <strong>Python2.X</strong> or <strong>Python3.X</strong> to run it. Moreover, the UI use some library to work, you can see the list of libraries by clicking on this button.
                                 </p>
                                 <p>
-                                    <a href="listlibraries.html" class="btn btn-warning btn-lg" target="_blank">
-                                        <span class="fa fa-external-link"></span> List of UI libraries
+                                    <a href="startGUI.html" class="btn btn-warning btn-lg">
+                                        <span class="fa fa-external-link"></span> Install the GUI</title>
+
                                     </a> 
                                 </p>
                             </div>
@@ -126,10 +134,10 @@
 	        <div class="container">
 	        	<div class="row">
 	        		<div class="col-sm-12 footer-copyright">
-                    	<a href="http://www.maisondelasimulation.fr/">Edit in Maison de la Simulation</a> by <a href="https://brunowu.github.io/">Mr. Xinzhe Wu</a>
+                    	Edit in <a href="http://www.maisondelasimulation.fr/">Maison de la Simulation</a> by <a href="https://brunowu.github.io/">Mr. Xinzhe Wu</a>
                     </div>
                     <div class="col-sm-12 footer-copyright">
-                    	<a href="credit">Attribution</a>
+                        <a href="credit">Attribution</a> - Designed by Quentin Petit
                     </div>
                 </div>
 	        </div>

@@ -6,9 +6,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SMG2S - FAQ</title>
+        <title>SMG2S - Start with SMG2S</title>
 
         <!-- CSS -->        
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Roboto:300,400,500">
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
@@ -75,48 +77,62 @@
 	        <div class="container">
 	        	
 	            <div class="row">
-	                <div class="col-sm-12 features section-description wow fadeIn">
-	                    <h2>FAQ</h2>
+	                <div class="col-sm-12 features section-description">
+	                    <h2>How to start with SMG2S ?</h2>
 	                    <div class="divider-1"><div class="line"></div></div>
 	                </div>
 	            </div>
+
+
                 <div class="row">
                     <div class="col-sm-12 features section-description ">
-                        <h3>What is the type of file that is read by the program?</h3>
-                        <p>The inputs and outputs of this program are Matrix Market Vector Format files. <p>
+                        <div class="divider-1"><div class="line"></div></div>
+                        <h3>Installation</h3>
+                        <div class="divider-1"><div class="line"></div></div>
                     </div>
-                    <div class="col-sm-6 features  ">
-                        <p> For the complex values, the given spectrum is stored in three columns, the first column is the coordinates, the second column is the real part of complex values, and the third column is the imaginary part of complex values. <p>
+                    <div class="col-sm-12 section-description">
+                        <p>You need to have <strong>MPI</strong>, <strong>PETSc</strong> and <strong>SLEPc</strong> on your machine. </p>
                     </div>
-                    <div class="col-sm-6 features">
-                        <p>For the real values, the given spectrum is stored in two columns, the first column is the coordinates, the second column is related values. </p>
+
+                    <div class="col-sm-12 section-description">
+                        <p><strong>Binary Executable file</strong></p>
+                        <p> In the main directory : <p>
+                        <pre align="left"><code>cmake .  -DCMAKE_INSTALL_PREFIX=${INSTALL_DIRECTORY}</code></pre>
+                        <p> Install : <p>
+                        <pre align="left"><code>make</code></pre>
+                        <p> Execution : <p>
+                        <pre align="left"><code>mpirun -np ${PROCS} ./smg2s.exe -SIZE ${MAT_SIZE} -L ${LOW_BANDWIDTH} -C ${CONTINUOUS_ONES} -SPTR ${GIVEN_SPECTRUM_FILE}</code></pre>
+                        <p>If <code>${GIVEN_SPECTRUM_FILE}</code> is not given, SMG2S will use the internal eigenvalue generation method to generate a default spectrum.</p>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12 features-box">
-                            <div class="col-sm-6 features  ">
-<pre align="left"><code>%%MatrixMarket matrix coordinate complex general</code>
-<code>3 3 3</code>
-<code>1 10 6.5154</code>
-<code>2 10.6288 3.4790</code>
-<code>3 10.7621 5.0540</code></pre>
-                            </div>
-                            <div class="col-sm-6 features">
-<pre align="left"><code>%%MatrixMarket matrix coordinate real general</code>
-<code>3 3</code>
-<code>1 10</code>
-<code>2 10.6288</code>
-<code>3 10.7621</code></pre>
-                            </div>
-                        </div>
+                    <div class="col-sm-12 section-description">
+                        <p><strong>Include files</strong></p>
+                        <p> Install the binary file and includes files into <code>${INSTALL_DIRECTORY}</code> : <p>
+                        <pre align="left"><code>make install</code></pre>
+                        <p> Include the SMG2S header file : <p>
+                        <pre align="left"><code>#include &lt;smg2s/smg2s.h&gt;</code></pre>
+                        <p> Include and Compile : <p>
+                        <pre align="left"><code>mpicxx example.cpp -I${INSTALL_DIRECTORY}/include</code></pre>
                     </div>
-                    <div class="divider-1"><div class="line"></div></div>
+
+
+                    <div class="col-sm-12 features section-description">
+                        <div class="divider-1"><div class="line"></div></div>
+                        <h3>How to use SMG2S ?</h3>
+                        <div class="divider-1"><div class="line"></div></div>
+                        <p>We recommand to you to see the example for learn how work SMG2S and how use it.</p>
+                        <p>
+                            <a href="example.html" class="btn btn-warning btn-lg">
+                                <span class="fa fa-external-link"></span> SMG2S Example
+                            </a> 
+                        </p>
+                    </div>
                 </div>
 	        </div>
         </div>
         
         <!-- Footer -->
-        <footer class="footer">
-	        <div class="container site-footer">
+        <footer>
+	        <div class="container">
 	        	<div class="row">
 	        		<div class="col-sm-12 footer-copyright">
                     	<a href="http://www.maisondelasimulation.fr/">Edit in Maison de la Simulation</a> by <a href="https://brunowu.github.io/">Mr. Xinzhe Wu</a>
