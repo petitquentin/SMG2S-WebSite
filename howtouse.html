@@ -61,8 +61,8 @@
                                     <li><a href="startGUI.html">Start with the GUI</a></li>
                                 </ul>
                             </li>
-                            <li><a href="howtouse.html">How to use ?</a></li>
-                            <li><a href="example.html">Example</a></li>
+                            <li><a href="howtouse.html">Tutorials</a></li>
+                            <li><a href="example.html">Interface</a></li>
 							<li><a href="project.html">Our project</a></li>
 							<li><a href="faq.html">FAQ</a></li>
 							<li><a class="btn btn-link-3" href="download.html">Download</a></li>
@@ -77,44 +77,52 @@
 	        <div class="container">
                 <div class="row">
                     <div class="col-sm-12 features section-description">
-                        <div class="divider-1"><div class="line"></div></div>
-                        <h2>How to use SMG2S ?</h2>
-                        <div class="divider-1"><div class="line"></div></div>
-                        <p>We recommand to you to see the example for learn how work SMG2S and how use it.</p>
-                        <p>
-                            <a href="example.html" class="btn btn-warning btn-lg">
-                                <span class="fa fa-external-link"></span> SMG2S Example
-                            </a> 
-                        </p>
+                        <h2>SMG2S Example</h2>
                     </div>
+                    <div class="col-sm-12 section-description">
+                        <p align="left">Include header file<p>
+<pre align="left"><code>#include &ltsmg2s/smg2s.h&gt</code></pre>
+                        <p align="left">Generate the Nilpotent Matrix for operation : <p>
+<pre align="left"><code>Nilpotency&ltint&gt nilp;
+nilp.NilpType1(length,probSize);</code></pre>
+                        <p align="left"> After that, you need to create the parallel Sparse Matrix Object Mt like this : <p>
+<pre align="left"><code>parMatrixSparse&ltstd::complex&ltfloat&gt,int&gt *Mt;</code></pre>
+                        <p align="left">And now, you can generate a new matrix : </p>
+<pre align="left"><code>MPI_Comm comm; 
+Mt = smg2s&ltstd::complex&ltfloat&gt,int&gt(probSize, nilp, lbandwidth, spectrum, comm);</code></pre>
+                        <p align="justify"> Here, the <code>probsize</code> parameter represent the matrix size, <code>nilp</code> is the nilpotency that we have declared previously, <code>lbandwidth</code> is the number of diagonal band. <code>spectrum</code> is the file path of spectra file. <code>comm</code> is the basic object used by MPI to determine which processes are involved in a communication.<p>
+                    </div>
+                    <div class="col-sm-12 section-description">
+                        <p><strong>Reminder : </strong>The given spectra file is in pseudo-Matrix Market Vector format. </p>
+
+                    </div>
+
                 </div>
 
 
 
                 <div class="row">
                     <div class="col-sm-12 features section-description">
-                        <div class="divider-1"><div class="line"></div></div>
-                        <h2>How to use the GUI ?</h2>
-                        <div class="divider-1"><div class="line"></div></div>
+                        <h2>Graphic User Interface for Verification</h2>
                     </div>
                     <div class="col-sm-12 section-description">
-                        <p> When you launch the program, a new windows opens like this :</p>
+                        <p align="left"> When you launch the program, a new windows opens like this :</p>
                         <img src="img/home.png" class="img-fluid" alt="Responsive image">
                     </div>
                     <div class="col-sm-12 section-description">
-                        <p> The first step is to select the files which be display When you have selected a file, the button change in green color :</p>
+                        <p align="left"> The first step is to select the files which be display When you have selected a file, the button change in green color :</p>
                         <img src="img/home_ready.png" class="img-fluid" alt="Responsive image">
                     </div>
                     <div class="col-sm-12 section-description">
-                        <p> After that, you can click on "Display" to build and open the graphic on the right side of the window. Click on "New window" to open your graphic on a new window. It's possible to open as many windows as you want. </p>
+                        <p align="left"> After that, you can click on "Display" to build and open the graphic on the right side of the window. Click on "New window" to open your graphic on a new window. It's possible to open as many windows as you want. </p>
                         <img src="img/home_screen.png" class="img-fluid" alt="Responsive image">
                     </div>
                     <div class="col-sm-12 section-description">
-                        <p> Your will be generate with automatic lens scaling, but your can generate it with your own scales. </p>
+                        <p align="left"> Your will be generate with automatic lens scaling, but your can generate it with your own scales. </p>
                         <img src="img/home_screen_custom.png" class="img-fluid" alt="Responsive image">
                     </div>
                     <div class="col-sm-12 section-description">
-                        <p> You can save the graphic with will be generate with your settings. For that, click in the button "Save" on the left of the main window. You can change the saved chart resolution on Settings->Canvas on the navbar.</p>
+                        <p align="left"> You can save the graphic with will be generate with your settings. For that, click in the button "Save" on the left of the main window. You can change the saved chart resolution on Settings->Canvas on the navbar.</p>
                         <img src="img/settings.png" class="img-fluid" alt="Responsive image">
                     </div>
 
@@ -124,13 +132,13 @@
                         <div class="divider-1"><div class="line"></div></div>
                     </div>
                     <div class="col-sm-12 section-description">
-                        <p> When your graphic is displayed, a function bar is created.</p>
+                        <p align="left"> When your graphic is displayed, a function bar is created.</p>
                         <img src="img/navbar.png" class="img-fluid" alt="Responsive image">
                     </div>
                     <div class="col-sm-12 section-description">
                         <p><strong>How to use this bar ?</strong></p>
 
-                        <p> The home icon <img src="img/but_home.png" class="img-fluid" alt="Responsive image"> permit to reset the original graphic which be generate. The left <img src="img/but_left.png" class="img-fluid" alt="Responsive image"> and right <img src="img/but_right.png" class="img-fluid" alt="Responsive image"> buttons permit to undo and redo graphic when you change it dynamically. If you click on the directional pad icon <img src="img/but_dpad.png" class="img-fluid" alt="Responsive image">, you can pan with left mouse and zoom and dezoom with right mouse. You must click again to disable this feature. When you click on the magnifying glass icon <img src="img/but_zoom.png" class="img-fluid" alt="Responsive image">, you can holding down the left or right mouse and select a rectangle on the graphic to respectively zoom or dezoom on the graph. Like with the directionnal pad, you need to click to disable this feature. When your mouse pointer is not on the graphic, you will see in the bottom right if one of this features are enabled. The settings icon <img src="img/but_settings.png" class="img-fluid" alt="Responsive image"> permit to configurate your graphic. The last one icon <img src="img/but_save.png" class="img-fluid" alt="Responsive image"> permit to save what you see on the screen (with the same resolution).</p>
+                        <p align="left"> The home icon <img src="img/but_home.png" class="img-fluid" alt="Responsive image"> permit to reset the original graphic which be generate. The left <img src="img/but_left.png" class="img-fluid" alt="Responsive image"> and right <img src="img/but_right.png" class="img-fluid" alt="Responsive image"> buttons permit to undo and redo graphic when you change it dynamically. If you click on the directional pad icon <img src="img/but_dpad.png" class="img-fluid" alt="Responsive image">, you can pan with left mouse and zoom and dezoom with right mouse. You must click again to disable this feature. When you click on the magnifying glass icon <img src="img/but_zoom.png" class="img-fluid" alt="Responsive image">, you can holding down the left or right mouse and select a rectangle on the graphic to respectively zoom or dezoom on the graph. Like with the directionnal pad, you need to click to disable this feature. When your mouse pointer is not on the graphic, you will see in the bottom right if one of this features are enabled. The settings icon <img src="img/but_settings.png" class="img-fluid" alt="Responsive image"> permit to configurate your graphic. The last one icon <img src="img/but_save.png" class="img-fluid" alt="Responsive image"> permit to save what you see on the screen (with the same resolution).</p>
                     </div>
                     <div class="col-sm-12 features section-description">
                         <div class="divider-1"><div class="line"></div></div>

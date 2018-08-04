@@ -61,8 +61,8 @@
                                     <li><a href="startGUI.html">Start with the GUI</a></li>
                                 </ul>
                             </li>
-                            <li><a href="howtouse.html">How to use ?</a></li>
-                            <li><a href="example.html">Example</a></li>
+                            <li><a href="howtouse.html">Tutorials</a></li>
+                            <li><a href="example.html">Interface</a></li>
                             <li><a href="project.html">Our project</a></li>
                             <li><a href="faq.html">FAQ</a></li>
                             <li><a class="btn btn-link-3" href="download.html">Download</a></li>
@@ -78,35 +78,39 @@
                 
                 <div class="row">
                     <div class="col-sm-12 features section-description">
-                        <h2>Example</h2>
-                        <div class="divider-1"><div class="line"></div></div>
+                        <h2>Interface</h2>
                     </div>
                 </div>
 
 
                 <div class="row">
                     <div class="col-sm-12 section-description">
-                        <p><strong>Reminder : </strong>you need to have MPI, PETSc and SLEPc on your machine. </p>
+                        <p align="left"><strong>Interface to C </strong> </p>
                     </div>
 
                     <div class="col-sm-12 section-description">
-                        <p>Include header file<p>
+                        <p align="left">Include header file<p>
 <pre align="left"><code>#include &ltsmg2s/smg2s.h&gt</code></pre>
-                        <p>Generate the Nilpotent Matrix for operation : <p>
+                        <p align="left">Generate the Nilpotent Matrix for operation : <p>
 <pre align="left"><code>Nilpotency&ltint&gt nilp;
 nilp.NilpType1(length,probSize);</code></pre>
-                        <p> After that, you need to create the parallel Sparse Matrix Object Mt like this : <p>
+                        <p align="left"> After that, you need to create the parallel Sparse Matrix Object Mt like this : <p>
 <pre align="left"><code>parMatrixSparse&ltstd::complex&ltfloat&gt,int&gt *Mt;</code></pre>
-                        <p>And now, you can generate a new matrix : </p>
+                        <p align="left">And now, you can generate a new matrix : </p>
 <pre align="left"><code>MPI_Comm comm; 
 Mt = smg2s&ltstd::complex&ltfloat&gt,int&gt(probSize, nilp, lbandwidth, spectrum, comm);</code></pre>
-                        <p> Here, the <code>probsize</code> parameter represent the matrix size, <code>nilp</code> is the nilpotency that we have declared previously, <code>lbandwidth</code> is the number of diagonal band. <code>spectrum</code> is the file path of spectra file. <code>comm</code> is the basic object used by MPI to determine which processes are involved in a communication.<p>
+                        <p align="justify"> Here, the <code>probsize</code> parameter represent the matrix size, <code>nilp</code> is the nilpotency that we have declared previously, <code>lbandwidth</code> is the number of diagonal band. <code>spectrum</code> is the file path of spectra file. <code>comm</code> is the basic object used by MPI to determine which processes are involved in a communication.<p>
                     </div>
                     <div class="col-sm-12 section-description">
-                        <p><strong>Reminder : </strong>The given spectra file is in pseudo-Matrix Market Vector format. </p>
-
+                        <p align="left"><strong>Interface to Python : </strong></p>
+                    </div>
+                    <div class="col-sm-12 section-description">
+                        <p align="left"><strong>Interface to PETSc : </strong></p>
                     </div>
 
+                    <div class="col-sm-12 section-description">
+                        <p align="left"><strong>Interface to Trilinos : </strong></p>
+                    </div>
 
                     <div class="col-sm-12 features section-description">
                         <div class="divider-1"><div class="line"></div></div>
