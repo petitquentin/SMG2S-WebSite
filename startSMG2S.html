@@ -61,8 +61,8 @@
                                     <li><a href="startGUI.html">Start with the GUI</a></li>
                                 </ul>
                             </li>
-                            <li><a href="howtouse.html">How to use ?</a></li>
-                            <li><a href="example.html">Example</a></li>
+                            <li><a href="howtouse.html">Tutorials</a></li>
+                            <li><a href="example.html">Interface</a></li>
 							<li><a href="project.html">Our project</a></li>
 							<li><a href="faq.html">FAQ</a></li>
 							<li><a class="btn btn-link-3" href="download.html">Download</a></li>
@@ -75,42 +75,31 @@
         <!-- Features -->
         <div class="features-container section-container">
 	        <div class="container">
-	        	
-	            <div class="row">
-	                <div class="col-sm-12 features section-description">
-	                    <h2>How to start with SMG2S ?</h2>
-	                    <div class="divider-1"><div class="line"></div></div>
-	                </div>
-	            </div>
-
-
                 <div class="row">
                     <div class="col-sm-12 features section-description ">
-                        <div class="divider-1"><div class="line"></div></div>
-                        <h3>Installation</h3>
-                        <div class="divider-1"><div class="line"></div></div>
+                        <h3>SMG2S Installation</h3>
                     </div>
                     <div class="col-sm-12 section-description">
                         <p>You need to have <strong>MPI</strong>, <strong>PETSc</strong> and <strong>SLEPc</strong> on your machine. </p>
                     </div>
 
                     <div class="col-sm-12 section-description">
-                        <p><strong>Binary Executable file</strong></p>
-                        <p> In the main directory : <p>
+                        <p align="left"><strong>Binary Executable file</strong></p>
+                        <p align="left"> In the main directory : <p>
                         <pre align="left"><code>cmake .  -DCMAKE_INSTALL_PREFIX=${INSTALL_DIRECTORY}</code></pre>
-                        <p> Install : <p>
+                        <p align="left"> Install : <p>
                         <pre align="left"><code>make</code></pre>
-                        <p> Execution : <p>
+                        <p align="left"> Execution : <p>
                         <pre align="left"><code>mpirun -np ${PROCS} ./smg2s.exe -SIZE ${MAT_SIZE} -L ${LOW_BANDWIDTH} -C ${CONTINUOUS_ONES} -SPTR ${GIVEN_SPECTRUM_FILE}</code></pre>
-                        <p>If <code>${GIVEN_SPECTRUM_FILE}</code> is not given, SMG2S will use the internal eigenvalue generation method to generate a default spectrum.</p>
+                        <p align="left">If <code>${GIVEN_SPECTRUM_FILE}</code> is not given, SMG2S will use the internal eigenvalue generation method to generate a default spectrum.</p>
                     </div>
                     <div class="col-sm-12 section-description">
-                        <p><strong>Include files</strong></p>
-                        <p> Install the binary file and includes files into <code>${INSTALL_DIRECTORY}</code> : <p>
+                        <p align="left"><strong>Include files</strong></p>
+                        <p align="left"> Install the binary file and includes files into <code>${INSTALL_DIRECTORY}</code> : <p>
                         <pre align="left"><code>make install</code></pre>
-                        <p> Include the SMG2S header file : <p>
+                        <p align="left"> Include the SMG2S header file : <p>
                         <pre align="left"><code>#include &lt;smg2s/smg2s.h&gt;</code></pre>
-                        <p> Include and Compile : <p>
+                        <p align="left"> Include and Compile : <p>
                         <pre align="left"><code>mpicxx example.cpp -I${INSTALL_DIRECTORY}/include</code></pre>
                     </div>
 
@@ -121,7 +110,7 @@
                         <div class="divider-1"><div class="line"></div></div>
                         <p>We recommand to you to see the example for learn how work SMG2S and how use it.</p>
                         <p>
-                            <a href="example.html" class="btn btn-warning btn-lg">
+                            <a href="howtouse.html" class="btn btn-warning btn-lg">
                                 <span class="fa fa-external-link"></span> SMG2S Example
                             </a> 
                         </p>
