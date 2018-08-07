@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SMG2S - Example</title>
+        <title>SMG2S - Interface</title>
 
         <!-- CSS -->        
 
@@ -75,49 +75,77 @@
         <!-- Features -->
         <div class="features-container section-container">
             <div class="container">
-                
                 <div class="row">
                     <div class="col-sm-12 features section-description">
-                        <h2>Interface To C</h2>
+                        <h2>Summary</h2>
+                    </div>
+                </div>
+                <div class="row">
+                            
+                    <div class="col-sm-12" style = " padding-left: 20%; padding-right: 20%">
+                        <p>Modules which are bundled in the Python installation :</p>
+                        <div class="list-group">
+                            <a href="#intC" class="list-group-item list-group-item-action" class="list-group-item list-group-item-action disabled">Interface to C</a>
+                            <a href="#intPython" class="list-group-item list-group-item-action" class="list-group-item list-group-item-action">Interface to Python</a>
+                            <a href="#intPETSc" class="list-group-item list-group-item-action" class="list-group-item list-group-item-action">Interface to PETSc</a>
+                            <a href="#intTrilinos" class="list-group-item list-group-item-action">Interface to Trilinos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 features section-description">
+                        <h2 id="intC">Interface to C</h2>
                     </div>
                 </div>
 
 
-                <div class="row">
-                    <div class="col-sm-12 section-description">
-                        <p align="left">SMG2S install command will generate a shared library libsmg2s.so into ${INSTALL_DIRECTORY}/lib. It can be used to profit the C wrapper of SMG2S. The compile command for C codes using SMG2S : <p>
-                        <pre align="left"><code>mpicc -L${INSTALL_DIRECTORY}/lib -I${INSTALL_DIRECTORY}/include -Wall -o test.exe c_test.c -lsmg2s2c</code></pre>
+                <div class="row row-centered">
+                    <div class="col-sm-12" style = " padding-left: 20%; padding-right: 20%">
+                        <p align="left">SMG2S install command will generate a shared library libsmg2s.so into <code>${INSTALL_DIRECTORY}/lib</code>. It can be used to profit the C wrapper of SMG2S. The compile command for C codes using SMG2S : </p>
 
-                        <p align="left">Include header file:<p>
+
+                        <p align="left">Include header file:</p>
+
 <pre align="left"><code>#include &ltinterface/C/c_wrapper.h&gt</code></pre>
-                        <p align="left">create Nilpotency object : <p>
+
+                        <p align="left">create Nilpotency object : </p>
+
 <pre align="left"><code>struct NilpotencyInt *n;
 n = newNilpotencyInt();
 NilpType1(n, 2, 10);</code></pre>
-                        <p align="left"> After that, you need to create the parallel Sparse Matrix Object Mt like this : <p>
+
+                        <p align="left"> After that, you need to create the parallel Sparse Matrix Object Mt like this : </p>
+
 <pre align="left"><code>struct parMatrixSparseDoubleInt *m;
 m = newParMatrixSparseDoubleInt();</code></pre>
+
                         <p align="left">Generate by SMG2S : </p>
+
 <pre align="left"><code>smg2s(m, 10, n, 3 ," ",MPI_COMM_WORLD);</code></pre>
                         <p align="left">GRelease Nilpotency Object and parMatrixSparse Object : </p>
+
 <pre align="left"><code>ReleaseNilpotencyInt(&n);
 ReleaseParMatrixSparseDoubleInt(&m);</code></pre>
+
                     </div>
 
                     <div class="row">
                         <div class="col-sm-12 features section-description">
-                            <h2>Interface To Python</h2>
+                            <h2 id="intPython">Interface to Python</h2>
                         </div>
                     </div>
-                    <div class="col-sm-12 section-description">
-                        <p align="left">Generate the shared library and install the python module of smg2s<p>
+
+                    <div class="col-sm-12" style = " padding-left: 20%; padding-right: 20%">
+                        <p align="left">Generate the shared library and install the python module of smg2s</p>
+
 <pre align="left"><code>cd ./interface/python;
 mpicxx -fpic -c smg2s_wrap.cxx  -I/apps/python/3/include/python3.5m -std=c++0x
 mpicxx -shared smg2s_wrap.o -o _smg2s.so
 python setup.py install
 </code></pre>
-                        <p align="left">Before the utilisation, make sure that mpi4py installed.<p>
-                        <p align="left">A little example of usge : <p>
+                        <p align="left">Before the utilisation, make sure that mpi4py installed.</p>
+                        <p align="left">A little example of usge : </p>
+
 <pre align="left"><code>from mpi4py import MPI
 import smg2s
 import sys
@@ -151,47 +179,69 @@ Mt = smg2s.parMatrixSparseDoubleInt()
 #Generate Mt by SMG2S
 #vector.txt is the file that stores the given spectral distribution in local filesystem.
 Mt=smg2s.smg2sDoubleInt(10,nilp,lbandwidth,"vector.txt", MPI.COMM_WORLD)</code></pre>
+
                     </div>
 
 
-                    <div class="row">
+                    <div class="row"">
                         <div class="col-sm-12 features section-description">
-                            <h2>Interface To PETSc</h2>
+                            <h2 id="intPETSc">Interface to PETSc</h2>
                         </div>
                     </div>
-                    <div class="col-sm-12 section-description">
-                        <p align="left">Include header file<p>
+                    <div class="row row-centered">
+                    <div class="col-sm-12" style = " padding-left: 20%; padding-right: 20%">
+
+                        <p align="left">Include header file</p>
+
 <pre align="left"><code>#include &ltinterface/PETSc/petsc_interface.h&gt</code></pre>
-                        <p align="left">Create parMatrixSparse type matrix : <p>
+
+                        <p align="left">Create parMatrixSparse type matrix : </p>
+
 <pre align="left"><code>parMatrixSparse&ltstd::complex&ltdouble&gt,int&gt *Mt;</code></pre>
-                        <p align="left"> Restore this matrix into CSR format : <p>
+
+                        <p align="left"> Restore this matrix into CSR format : </p>
+
 <pre align="left"><code>Mt->Loc_ConvertToCSR();</code></pre>
+
                         <p align="left">Create PETSc MAT type : </p>
+
 <pre align="left"><code>MatCreate(PETSC_COMM_WORLD,&A); </code></pre>
+
                         <p align="left">Convert to PETSc MAT format : </p>
+
 <pre align="left"><code>A = ConvertToPETSCMat(Mt); </code></pre>
+
                     </div>
 
 
                     <div class="row">
                         <div class="col-sm-12 features section-description">
-                            <h2>Interface To Trilinos</h2>
+                            <h2 id="intTrilinos">Interface to Trilinos</h2>
                         </div>
                     </div>
-                    <div class="col-sm-12 section-description">
-                        <p align="left">Include header file<p>
+                    <div class="col-sm-12" style = " padding-left: 20%; padding-right: 20%">
+                        <p align="left">Include header file</p>
+
+
+
 <pre align="left"><code>#include &ltinterface/Trilinos/trilinos_interface.hpp&gt</code></pre>
-                        <p align="left">Create parMatrixSparse type matrix : <p>
+
+                        <p align="left">Create parMatrixSparse type matrix : </p>
+
 <pre align="left"><code>parMatrixSparse&ltstd::complex&ltdouble&gt,int&gt *Mt;</code></pre>
+
                         <p align="left">Create Trilinos/Teptra MAT type : </p>
+
 <pre align="left"><code>RCP&ltCrsMatrix&ltScalarType&gt &gt K ; </code></pre>
+
                         <p align="left">Convert to Trilinos MAT format : </p>
+
 <pre align="left"><code>K = ConvertToTrilinosMat(Mt); </code></pre>
                     </div>
-
                 </div>
             </div>
         </div>
+    </div>
 
         <!-- Footer -->
         <footer>

@@ -79,17 +79,33 @@
                     <div class="col-sm-12 features section-description">
                         <h2>SMG2S Example</h2>
                     </div>
-                    <div class="col-sm-12 section-description">
+                    <div class="col-sm-12">
                         <p align="left">Include header file<p>
+<div class="row">
+    <div class="col-sm-6">
 <pre align="left"><code>#include &ltsmg2s/smg2s.h&gt</code></pre>
+    </div>
+</div>
                         <p align="left">Generate the Nilpotent Matrix for operation : <p>
+<div class="row">
+    <div class="col-sm-6">
 <pre align="left"><code>Nilpotency&ltint&gt nilp;
 nilp.NilpType1(length,probSize);</code></pre>
+    </div>
+</div>
                         <p align="left"> After that, you need to create the parallel Sparse Matrix Object Mt like this : <p>
+<div class="row">
+    <div class="col-sm-6">
 <pre align="left"><code>parMatrixSparse&ltstd::complex&ltfloat&gt,int&gt *Mt;</code></pre>
+    </div>
+</div>
                         <p align="left">And now, you can generate a new matrix : </p>
+<div class="row">
+    <div class="col-sm-6">
 <pre align="left"><code>MPI_Comm comm; 
 Mt = smg2s&ltstd::complex&ltfloat&gt,int&gt(probSize, nilp, lbandwidth, spectrum, comm);</code></pre>
+    </div>
+</div>
                         <p align="justify"> Here, the <code>probsize</code> parameter represent the matrix size, <code>nilp</code> is the nilpotency that we have declared previously, <code>lbandwidth</code> is the number of diagonal band. <code>spectrum</code> is the file path of spectra file. <code>comm</code> is the basic object used by MPI to determine which processes are involved in a communication.<p>
                     </div>
                     <div class="col-sm-12 section-description">
