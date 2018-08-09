@@ -76,60 +76,47 @@
         <div class="features-container section-container">
 	        <div class="container">
                 <div class="row">
-                    <div class="col-sm-12 features section-description ">
+                    <div class="col-sm-12 features section-description" style = " padding-left: 20%; padding-right: 20%">
                         <h3>SMG2S Installation</h3>
                     </div>
-                    <div class="col-sm-12 section-description">
+                    <div class="col-sm-12 section-description"  style = " padding-left: 20%; padding-right: 20%">
                         <p>You need to have <strong>MPI</strong>, <strong>PETSc</strong> and <strong>SLEPc</strong> on your machine. </p>
                     </div>
 
-                    <div class="col-sm-12">
+                    <div class="col-sm-12" style = " padding-left: 20%; padding-right: 20%">
                         <p align="left"><strong>Binary Executable file</strong></p>
                         <p align="left"> In the main directory : </p>
-                        <div class="row">
-                            <div class="col-sm-6">
+                        
                         <pre align="left"><code>cmake .  -DCMAKE_INSTALL_PREFIX=${INSTALL_DIRECTORY}</code></pre>
-                            </div>
-                        </div>
+                         
                         <p align="left"> Install : </p>
-                        <div class="row">
-                            <div class="col-sm-6">
+                        
                         <pre align="left"><code>make</code></pre>
-                            </div>
-                        </div>
 
                         <p align="left"> Execution : </p>
-                        <div class="row">
-                            <div class="col-sm-6">
+                        
                         <pre align="left"><code>mpirun -np ${PROCS} ./smg2s.exe -SIZE ${MAT_SIZE} -L ${LOW_BANDWIDTH} -C ${CONTINUOUS_ONES} -SPTR ${GIVEN_SPECTRUM_FILE}</code></pre>
-                            </div>
-                        </div>
+                        
                         <p align="left">If <code>${GIVEN_SPECTRUM_FILE}</code> is not given, SMG2S will use the internal eigenvalue generation method to generate a default spectrum.</p>
                     </div>
-                    <div class="col-sm-12 ">
+                    <div class="col-sm-12 "  style = " padding-left: 20%; padding-right: 20%">
                         <p align="left"><strong>Include files</strong></p>
                         <p align="left"> Install the binary file and includes files into <code>${INSTALL_DIRECTORY}</code> : </p>
-                        <div class="row">
-                            <div class="col-sm-6">
+                        
                         <pre align="left"><code>make install</code></pre>
-                            </div>
-                        </div>
+                        
                         <p align="left"> Include the SMG2S header file : </p>
-                        <div class="row">
-                            <div class="col-sm-6">
+                        
                         <pre align="left"><code>#include &lt;smg2s/smg2s.h&gt;</code></pre>
-                            </div>
-                        </div>
+                        
                         <p align="left"> Include and Compile : </p>
-                        <div class="row">
-                            <div class="col-sm-6">
+                        
                         <pre align="left"><code>mpicxx example.cpp -I${INSTALL_DIRECTORY}/include</code></pre>
-                            </div>
-                        </div>
+                         
                     </div>
 
 
-                    <div class="col-sm-12 features section-description">
+                    <div class="col-sm-12 features section-description"  style = " padding-left: 20%; padding-right: 20%">
                         <div class="divider-1"><div class="line"></div></div>
                         <h3>How to use SMG2S ?</h3>
                         <div class="divider-1"><div class="line"></div></div>
