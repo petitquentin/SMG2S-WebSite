@@ -91,15 +91,12 @@
         <!-- Features -->
         <div class="features-container section-container">
 	        <div class="container">
-	        	<div class="row">
-	                <div class="col-sm-12 features section-description">
-	                	<img src="img/matgen.jpg" class="img-fluid" alt="MatGen.jpg" width="70%">
-	                </div>
-	            </div>
+
 	            <div class="row">
 	                <div class="col-sm-12 features section-description wow fadeIn">
 	                    <h3>What is SMG2S ?</h3>
 	                    <div class="divider-1"><div class="line"></div></div>
+	                    <p align="justify">SMG2S (Scalable Matrix Generator with Given Spectrum) is a software which provides to generator the non-Hermitian Matrices with User-customized eigenvalues. SMG2S is implemented in parallel based on MPI (Message Passing Interface) and C++11 to support efficiently the generation of test matrices on distributed memory platforms. </p>		        	
 	                </div>
 	            </div>
 	            
@@ -110,7 +107,7 @@
 	                			<i class="fas fa-users"></i>
 	                		</div>
 	                		<div class="col-sm-9">
-	                			<h3>Motivation</h3>
+	                			<h3>Purpose</h3>
 		                    	<p align="justify">
 		                    		Nowadays, IT areas like machine learning and artificial intelligence use iterative linear algebra methods. Algorithms are increasingly using matrices which had never been than large. In order to decrease computing time, we have to find non-Hermitian solvers. They will allow to find a answer to eigenvalues and linear problems on parallel and/or distributed machines. 
 		                    	</p>
@@ -123,7 +120,7 @@
 	                			<i class="fas fa-tasks"></i>
 	                		</div>
 	                		<div class="col-sm-9">
-	                			<h3>Method</h3>
+	                			<h3>Methologies</h3>
 		                    	<p align="justify">
 		                    		The inputs of this program are Matrix Market Vector Format files. Starting from given spectra, SMG2S uses eigenvalue to generate large-scale non-Hermitian matrices. It’s a matrices generation method by selecting many parameters that gives one with a high level of accuracy. 
 		                    	</p>
@@ -139,7 +136,7 @@
 	                			<i class="fas fa-server"></i>
 	                		</div>
 	                		<div class="col-sm-9">
-	                			<h3>Parallel calculations</h3>
+	                			<h3>Parallel Implementation</h3>
 		                    	<p align="justify">
 		                    		SMG2S can be implemented both on clusters of CPUs and GPUs. It provides several methods to verify the generated matrices. Based on an open source parallel software, the algorithm optimazes basic operation to decrease computing time. 
 								</p>
@@ -152,13 +149,41 @@
 	                			<i class="far fa-window-maximize"></i>
 	                		</div>
 	                		<div class="col-sm-9">
-	                			<h3>UI</h3>
+	                			<h3>Verfication</h3>
 		                    	<p align="justify">
 		                    		You can use the graphical user interface to check the algorithm’s ability to keep the given spectra.
 		                    	</p>
 	                		</div>
 	                	</div>
 	                </div>
+
+	                <div class="row">
+	                <div class="col-sm-12 features section-description wow fadeIn">
+			        	<div class="row">
+			                <div class="col-sm-12 features section-description">
+			                	<img src="img/matgen.jpg" class="img-fluid" alt="MatGen.jpg" width="70%">
+			                </div>
+			            </div>
+	                     <div class="col-sm-12 features section-description" style = " padding-left: 10%; padding-right: 10%">
+
+	                     <p align="left"><strong>SMG2S provides:</strong></p>
+		        
+                    	 </div>
+
+	                     <div class="col-sm-12 features section-description" style = " padding-left: 20%; padding-right: 20%">
+		                     <ul style="list-style-type:disc">
+								  <li align="justify">A collection of c++ header files;</li>
+								  <li align="justify">A functionality implemented based on PETSc/SLPEc to verify the ability of SMG2S to keep given spectrum; </li>
+								  <li align="justify">A User-friendly graphic interface to support the comparison of initial and final spectral distributions.</li>
+								  <li align="justify">The interfaces to different programming languages and scientific computional libraries, including C, Python, PETSc and Trilinos/Teptra.</li>
+
+							</ul> 
+                    	 </div>
+	                </div>
+	            </div>
+
+
+
 	            </div>
 
 	        </div>
