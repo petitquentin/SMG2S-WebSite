@@ -62,8 +62,9 @@
                                 </ul>
                             </li>
                             <li><a href="howtouse.html">Tutorials</a></li>
+                            <li><a href="verification.html">Verification</a></li>
                             <li><a href="example.html">Interface</a></li>
-							<li><a href="project.html">Our project</a></li>
+							<li><a href="project.html">Contact us</a></li>
 							<li><a href="faq.html">FAQ</a></li>
 							<li><a class="btn btn-link-3" href="download.html">Download</a></li>
 						</ul>
@@ -77,41 +78,35 @@
 	        <div class="container">
                 <div class="row">
                     <div class="col-sm-12 features section-description" style = " padding-left: 20%; padding-right: 20%">
-                        <h3>SMG2S Installation</h3>
+                        <h2>SMG2S Installation</h2>
                     </div>
-                    <div class="col-sm-12 section-description"  style = " padding-left: 20%; padding-right: 20%">
-                        <p>You need to have <strong>MPI</strong>, <strong>PETSc</strong> and <strong>SLEPc</strong> on your machine. </p>
+                    <div class="col-sm-12 section-description"  style = " padding-left: 10%; padding-right: 10%">
+                        <h3>Prerequisites</h3>
+                        <p align="left">1. C++ Compiler with <strong>c++11</strong> support.</p>
+                        <p align="left">2. Cmake (version minimum 3.6).</p>
+                        <p align="left">3. PETSc and SLPEc are necessary for the verification of the ability to keep the given spectrum.</p>
                     </div>
 
                     <div class="col-sm-12" style = " padding-left: 20%; padding-right: 20%">
-                        <p align="left"><strong>Binary Executable file</strong></p>
+                        <h3>Installation</h3>
                         <p align="left"> In the main directory : </p>
                         
                         <pre align="left"><code>cmake .  -DCMAKE_INSTALL_PREFIX=${INSTALL_DIRECTORY}</code></pre>
                          
-                        <p align="left"> Install : </p>
+                        <p align="left"> The <code>main.cpp</code> will generate an exectutable <code>smg2s.exe</code> to demonstrate a minimum sample : </p>
                         
                         <pre align="left"><code>make</code></pre>
 
-                        <p align="left"> Execution : </p>
+                        <p align="left"> Execution of <code>smg2s.exe</code>. If <code>${GIVEN_SPECTRUM_FILE}</code> is not given, SMG2S will use the internal eigenvalue generation method to generate a default spectrum: </p>
                         
                         <pre align="left"><code>mpirun -np ${PROCS} ./smg2s.exe -SIZE ${MAT_SIZE} -L ${LOW_BANDWIDTH} -C ${CONTINUOUS_ONES} -SPTR ${GIVEN_SPECTRUM_FILE}</code></pre>
                         
                         <p align="left">If <code>${GIVEN_SPECTRUM_FILE}</code> is not given, SMG2S will use the internal eigenvalue generation method to generate a default spectrum.</p>
                     </div>
                     <div class="col-sm-12 "  style = " padding-left: 20%; padding-right: 20%">
-                        <p align="left"><strong>Include files</strong></p>
-                        <p align="left"> Install the binary file and includes files into <code>${INSTALL_DIRECTORY}</code> : </p>
+                        <p align="left">The main part of SMG2S is a colllection of <strong>header files</strong>.  Install the header files into <code>${INSTALL_DIRECTORY}</code> :</p>
                         
                         <pre align="left"><code>make install</code></pre>
-                        
-                        <p align="left"> Include the SMG2S header file : </p>
-                        
-                        <pre align="left"><code>#include &lt;smg2s/smg2s.h&gt;</code></pre>
-                        
-                        <p align="left"> Include and Compile : </p>
-                        
-                        <pre align="left"><code>mpicxx example.cpp -I${INSTALL_DIRECTORY}/include</code></pre>
                          
                     </div>
 
@@ -122,7 +117,7 @@
                         <div class="divider-1"><div class="line"></div></div>
                         <p>We recommand to you to see the example for learn how work SMG2S and how use it.</p>
                         <p>
-                            <a href="howtouse.html" class="btn btn-warning btn-lg">
+                            <a href="howtouse.html#ExSMG2S" class="btn btn-warning btn-lg">
                                 <span class="fa fa-external-link"></span> SMG2S Example
                             </a> 
                         </p>

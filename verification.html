@@ -6,9 +6,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SMG2S - First Step</title>
+        <title>SMG2S - Start with SMG2S</title>
 
         <!-- CSS -->        
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Roboto:300,400,500">
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
@@ -60,7 +62,7 @@
                                 </ul>
                             </li>
                             <li><a href="howtouse.html">Tutorials</a></li>
-                            <li><a href="verification.html">Verification</a></li>                           
+                            <li><a href="verification.html">Verification</a></li>       
                             <li><a href="example.html">Interface</a></li>
 							<li><a href="project.html">Contact us</a></li>
 							<li><a href="faq.html">FAQ</a></li>
@@ -74,57 +76,59 @@
         <!-- Features -->
         <div class="features-container section-container">
 	        <div class="container">
-	        	
-	            <div class="row">
-	                <div class="col-sm-12 features section-description ">
-	                    <h2>First step with SMG2S</h2>
-	                    <div class="divider-1"><div class="line"></div></div>
-	                </div>
-	            </div>
-
-
                 <div class="row">
-                    <div class="col-sm-12 section-description ">
-                        <h3>What is needed for launch SMG2S ?</h3>
+                    <div class="col-sm-12 features section-description" style = " padding-left: 20%; padding-right: 20%">
+                        <h3>Verification of Spectrum</h3>
                     </div>
-                    <div class="col-sm-6 features-box">
-                        <div class="row">
-                            <div class="col-sm-3 features-box-icon">
-                                <i class="fa fa-code"></i>
-                            </div>
-                            <div class="col-sm-9">
-                                <h3>To generate matrices</h3>
-                                <p>
-                                    You need to have <strong>MPI</strong>, <strong>PETSc</strong> and <strong>SLEPc</strong> on your machine. Please refer to README.md file on Github.
-                                </p>
-                                <p>
-                                    <a href="startGUI.html" class="btn btn-warning btn-lg">
-                                        <span class="fa fa-external-link"></span> Install SMG2S</title>
+                    <div class="col-sm-12" style = " padding-left: 20%; padding-right: 20%">
+                        <p align="left">SMG2S provides the functionality to verify the abilibity to keep given spectrum. In the directory of <code>verification</code>. The implementation of the functionality is <code>powerInverse.cpp</code>.</p>
+                        <p align="left"> Compile : </p>
+                        <pre align="left"><code>make</code></pre>
+                        <p align="left"> This will generate an executable <code>powerInverse.exe</code> </p>
+                        <p align="left">The given spectrum is stored in a file <code>vector.txt</code> by the matrix-market vector format.</p>
 
-                                    </a> 
-                                </p>
-                            </div>
-                        </div>
+<pre align="left"><code>%%MatrixMarket matrix coordinate complex general</code>
+<code>3 3 3</code>
+<code>1 10 6.5154</code>
+<code>2 10.6288 3.4790</code>
+<code>3 10.7621 5.0540</code>
+<code>...</code></pre>
+                        <p align="left">Running script:</p>
+                        <pre align="left"><code>#!/bin/bash
+EXEC=./powerInverse.exe
+N=100
+L=10
+TEST_TOL=0.00001
+DEGREE=4
+LENGTH=$(awk 'NR==2{print $1}' vector.txt)
+echo "Test Eigenvalues number = "${LENGTH}
+
+for((i=3;i<=${LENGTH}+2;i++))
+do
+    real=$(awk 'NR=='$i'{print $2}' vector.txt)
+    imag=$(awk 'NR=='$i'{print $3}' vector.txt)
+    mpirun -np 1 ${EXEC} -n ${N} -l ${L} -eps_monitor_conv -eps_power_shift_type constant -st_type sinvert -exact_value ${real}+${imag}i -test_tol ${TEST_TOL} -degree ${DEGREE}
+done
+</code></pre>
+                        <p align="justify"> Suppose the result is stored in <code>vector1_results.txt</code>. With the help of <code>traitement.sh</code>, <code>vector1_results.txt</code> can be cleaned and stored with matrix market format into <code>vector1_results_clean.txt</code>. The 1st and 2nd arugments for the execution are seperately the initial results file and the final cleaned and formatted file. </p>
+                        <pre align="left"><code>./traitement.sh vector1_results.txt vector1_results_clean.txt</code></pre>
+                         <p align="left"> The verification results can be compared by the proposed <strong>Graphic User Interface</strong>: </p>
+
+                        <img src="img/home_screen.png" class="img-fluid" alt="Responsive image">
+
                     </div>
 
-                    <div class="col-sm-6 features-box">
-                        <div class="row">
-                            <div class="col-sm-3 features-box-icon">
-                                <i class="fa fa-mouse-pointer"></i>
-                            </div>
-                            <div class="col-sm-9">
-                                <h3>To use GUI</h3>
-                                <p>
-                                    You need to have <strong>Python2.X</strong> or <strong>Python3.X</strong> to run it. Moreover, the UI use some library to work, you can see the list of libraries by clicking on this button.
-                                </p>
-                                <p>
-                                    <a href="startGUI.html" class="btn btn-warning btn-lg">
-                                        <span class="fa fa-external-link"></span> Install the GUI</title>
 
-                                    </a> 
-                                </p>
-                            </div>
-                        </div>
+                    <div class="col-sm-12 features section-description"  style = " padding-left: 20%; padding-right: 20%">
+                        <div class="divider-1"><div class="line"></div></div>
+                        <h3>How to use the GUI ?</h3>
+                        <div class="divider-1"><div class="line"></div></div>
+                        <p>We recommand to you to see the example for learn how work the GUI of SMG2S and how use it.</p>
+                        <p>
+                            <a href="howtouse.html#ExGUI" class="btn btn-warning btn-lg">
+                                <span class="fa fa-external-link"></span> SMG2S GUI Example
+                            </a> 
+                        </p>
                     </div>
                 </div>
 	        </div>
@@ -135,7 +139,7 @@
 	        <div class="container">
 	        	<div class="row">
 	        		<div class="col-sm-12 footer-copyright">
-                    	Edit in <a href="maisondelasimulation.html">Maison de la Simulation</a> by <a href="https://brunowu.github.io/">Mr. Xinzhe Wu</a>
+                    	Edit in  <a href="maisondelasimulation.html">Maison de la Simulation</a> by <a href="https://brunowu.github.io/">Mr. Xinzhe Wu</a>
                     </div>
                     <div class="col-sm-12 footer-copyright">
                         <a href="credit.html">Attribution</a> - Designed by Quentin Petit
@@ -157,7 +161,6 @@
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->
 
-		
     </body>
 
 </html>
