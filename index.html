@@ -63,8 +63,9 @@
                                 </ul>
                             </li>
                             <li><a href="howtouse.html">Tutorials</a></li>
+                             <li><a href="verification.html">Verification</a></li>                           
                             <li><a href="example.html">Interface</a></li>
-							<li><a href="project.html">Our project</a></li>
+							<li><a href="project.html">Contact us</a></li>
 							<li><a href="faq.html">FAQ</a></li>
 							<li><a class="btn btn-link-3" href="download.html">Download</a></li>
 						</ul>
@@ -80,7 +81,7 @@
 								<p class="medium-paragraph">Projet MYX - Maison de la Simulation - France
 								</p>
 							</div>
-							<h1>Sparse Matrix Generator with Given Spectrum</h1>
+							<h1>Scalable Matrix Generator with Given Spectrum</h1>
 						</div>
 					</div>
 	            </div>
@@ -90,15 +91,12 @@
         <!-- Features -->
         <div class="features-container section-container">
 	        <div class="container">
-	        	<div class="row">
-	                <div class="col-sm-12 features section-description">
-	                	<img src="img/matgen.jpg" class="img-fluid" alt="MatGen.jpg" width="70%">
-	                </div>
-	            </div>
+
 	            <div class="row">
 	                <div class="col-sm-12 features section-description wow fadeIn">
-	                    <h2>What is SMG2S ?</h2>
+	                    <h3>What is SMG2S ?</h3>
 	                    <div class="divider-1"><div class="line"></div></div>
+	                    <p align="justify">SMG2S (Scalable Matrix Generator with Given Spectrum) is a software which provides to generator the non-Hermitian Matrices with User-customized eigenvalues. SMG2S is implemented in parallel based on MPI (Message Passing Interface) and C++11 to support efficiently the generation of test matrices on distributed memory platforms. </p>		        	
 	                </div>
 	            </div>
 	            
@@ -106,12 +104,12 @@
 	                <div class="col-sm-6 features-box wow fadeInLeft">
 	                	<div class="row">
 	                		<div class="col-sm-3 features-box-icon">
-	                			<i class="fas fa-users"></i>
+	                			<i class="fas fa-anchor"></i>
 	                		</div>
 	                		<div class="col-sm-9">
-	                			<h3>Motivation</h3>
+	                			<h3>Purpose</h3>
 		                    	<p align="justify">
-		                    		Nowadays, IT areas like machine learning and artificial intelligence use iterative linear algebra methods. Algorithms are increasingly using matrices which had never been than large. In order to decrease computing time, we have to find non-Hermitian solvers. They will allow to find a answer to eigenvalues and linear problems on parallel and/or distributed machines. 
+		                    		Iterative linear algebra methods are important for the applications in various fields. The analysis of the iterative method behaviors is complex, and it is necessary to evaluate their convergence to solve extremely large non-Hermitian eigenvalue and linear problems on parallel and/or distributed machines. This convergence depends on the properties of spectra. Thus, we propse SMG2S to generate large matrices with known spectra to benchmark these methods. The generated matrices are non-Hermitian and non-trivial, with very high dimension.
 		                    	</p>
 	                		</div>
 	                	</div>
@@ -119,12 +117,13 @@
 	                <div class="col-sm-6 features-box wow fadeInLeft">
 	                	<div class="row">
 	                		<div class="col-sm-3 features-box-icon">
-	                			<i class="fas fa-tasks"></i>
+	                			<i class="fas fa-cogs"></i>
 	                		</div>
 	                		<div class="col-sm-9">
-	                			<h3>Method</h3>
+	                			<h3>Methologies</h3>
 		                    	<p align="justify">
-		                    		The inputs of this program are Matrix Market Vector Format files. Starting from given spectra, SMG2S uses eigenvalue to generate large-scale non-Hermitian matrices. It’s a matrices generation method by selecting many parameters that gives one with a high level of accuracy. 
+		                    		SMG2S can generate the non-Hermitian matrices with user-custormized eigenvalues. The details of methologies can be found [1].
+		                    		
 		                    	</p>
 	                		</div>
 	                	</div>
@@ -135,12 +134,12 @@
 	                <div class="col-sm-6 features-box wow fadeInLeft">
 	                	<div class="row">
 	                		<div class="col-sm-3 features-box-icon">
-	                			<i class="fas fa-server"></i>
+	                			<i class="fas fa-desktop"></i>
 	                		</div>
 	                		<div class="col-sm-9">
-	                			<h3>Parallel calculations</h3>
+	                			<h3>Parallel Implementation</h3>
 		                    	<p align="justify">
-		                    		SMG2S can be implemented both on clusters of CPUs and GPUs. It provides several methods to verify the generated matrices. Based on an open source parallel software, the algorithm optimazes basic operation to decrease computing time. 
+		                    		SMG2S is implemented in parallel based on MPI. This implementation allows SMG2S to efficiently generate very large dimension matrix on top of distributed memory clusters/supercomputers.
 								</p>
 	                		</div>
 	                	</div>
@@ -148,21 +147,125 @@
 	                <div class="col-sm-6 features-box wow fadeInLeft">
 	                	<div class="row">
 	                		<div class="col-sm-3 features-box-icon">
-	                			<i class="far fa-window-maximize"></i>
+	                			<i class="far fa-check-square"></i>
 	                		</div>
 	                		<div class="col-sm-9">
-	                			<h3>UI</h3>
+	                			<h3>Verfication</h3>
 		                    	<p align="justify">
-		                    		You can use the graphical user interface to check the algorithm’s ability to keep the given spectra.
+		                    		The ability of SMG2S to keep the accuracy of given spectrum can be verified by the functionality proposed inside SMG2S. This function is based the <strong>shift inverse power method</strong>. SMG2S gives also an graphic user interface to compare the given and final spectral distribution for the verification.
 		                    	</p>
 	                		</div>
 	                	</div>
 	                </div>
+
+	                <div class="row">
+	                <div class="col-sm-12 features section-description wow fadeIn">
+			        	<div class="row">
+			                <div class="col-sm-12 features section-description">
+			                	<img src="img/matgen.jpg" class="img-fluid" alt="MatGen.jpg" width="70%">
+			                </div>
+			            </div>
+	                     <div class="col-sm-12 features section-description" style = " padding-left: 10%; padding-right: 10%">
+
+	                     <p align="left"><strong>SMG2S provides:</strong></p>
+		        
+                    	 </div>
+
+	                     <div class="col-sm-12 features section-description" style = " padding-left: 20%; padding-right: 20%">
+		                     <ul style="list-style-type:disc">
+								  <li align="justify">A collection of c++ header files;</li>
+								  <li align="justify">A functionality implemented based on PETSc/SLPEc to verify the ability of SMG2S to keep given spectrum; </li>
+								  <li align="justify">A User-friendly graphic interface to support the comparison of initial and final spectral distributions.</li>
+								  <li align="justify">The interfaces to different programming languages and scientific computional libraries, including C, Python, PETSc and Trilinos/Teptra.</li>
+
+							</ul> 
+                    	 </div>
+	                </div>
+	            </div>
+
+
+
 	            </div>
 
 	        </div>
 	    </div>
 
+<div class="features-container section-container">
+	        <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 features section-description" style = " padding-left: 20%; padding-right: 20%">
+                        <h3>Distribution</h3>
+                    </div>
+                    <div class="row" style = " padding-left: 10%; padding-right: 10%">
+                    	<p class="" align="left">SMG2S is a open source software published under the <strong>GNU Lesser General Public License v3.0</strong>. SMG2S can be redistributed and modified under the terms of this license. </p>
+
+                    </div>
+                </div>
+	        </div>
+        </div>
+
+
+ 
+ <div class="features-container section-container">
+	        <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 features section-description" style = " padding-left: 20%; padding-right: 20%">
+                        <h3>Contributors</h3>
+                    </div>
+                    <div class="row" style = " padding-left: 10%; padding-right: 10%">
+                                <div class="col-sm-4 features">
+                                    <p class="" align="left"><strong>Xinzhe Wu</strong></p>
+                                </div>
+                                <div class="col-sm-4 features">
+                                    <p class="" align="left">Phd Student (main constributor)</p>
+                                </div>
+
+                                <div class="col-sm-4 features">
+                                    <p class="" align="left"><a href="mailto:xinzhe.wu@cea.fr">xinzhe.wu@cea.fr</a></p>
+                                </div>
+                            </div>
+                            <div class="row" style = " padding-left: 10%; padding-right: 10%">
+                                <div class="col-sm-4 features">
+                                    <p class="" align="left"><strong>Serge Petiton</strong></p>
+                                </div>
+                                <div class="col-sm-4 features">
+                                    <p class="" align="left">Supervisor</p>
+                                </div>
+                                <div class="col-sm-4 features">
+                                    <p class="" align="left"><a href="mailto:serge.petiton@univ-lille1.fr">serge.petiton@univ-lille1.fr</a></p>
+                                </div>
+                            </div>
+                            <div class="row" style = " padding-left: 10%; padding-right: 10%">
+                                <div class="col-sm-4 features">
+                                    <p class="" align="left"><strong>Quentin Petit</strong></p>
+                                </div>
+                                <div class="col-sm-4 features">
+                                    <p class="" align="left">Internship Student (GUI Implementation)</p>
+                                </div>
+                                <div class="col-sm-4 features">
+                                    <p class="" align="left"><a href="mailto:quentin.petit@polyetch-lille.net">quentin.petit@polyetch-lille.net</a></p>
+                                </div>
+                            </div>
+                </div>
+	        </div>
+        </div>
+
+
+
+ <div class="features-container section-container">
+	        <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 features section-description" style = " padding-left: 20%; padding-right: 20%">
+                        <h3>References</h3>
+                    </div>
+                    <div class="col-sm-12 section-description"  style = " padding-left: 10%; padding-right: 10%">
+                    <ol>
+					<li align="left"> Hervé Galicher, France Boillod-Cerneux, Serge Petiton, and Christophe Calvin. Generate very large sparse matrices starting from a given spectrum. <i>in lecture notes in computer science, 8969</i>, springer (2014).
+					</ol>
+                    </div>
+                </div>
+	        </div>
+        </div>
         <!-- Footer -->
         <footer class="footer">
 	        <div class="container">
@@ -176,7 +279,6 @@
                 </div>
 	        </div>
         </footer>
-
 
         <!-- Javascript -->
         <script src="assets/js/jquery-1.11.1.min.js"></script>
